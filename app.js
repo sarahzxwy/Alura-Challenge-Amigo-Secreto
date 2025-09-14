@@ -30,3 +30,20 @@ function atualizarLista() {
         lista.appendChild(li);
     });
 }
+
+function sortearAmigo() {
+    const listaResultado = document.getElementById("resultado");
+
+    listaResultado.innerHTML = "";
+
+    if (nomes.length === 0) {
+        listaResultado.innerHTML = "<li>Nenhum amigo disponível</li>";
+        return;
+    }
+
+    const sorteio = Math.floor(Math.random() * nomes.length);
+
+    const amigoSorteado = nomes[sorteio];
+
+    listaResultado.innerHTML = `<li>Amigo sorteado: ${amigoSorteado}</li>`;
+}
